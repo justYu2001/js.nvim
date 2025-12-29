@@ -1,0 +1,5 @@
+Js.disable()	js.txt	/*Js.disable()*
+Js.enable()	js.txt	/*Js.enable()*
+Js.options	js.txt	/*Js.options*
+Js.setup()	js.txt	/*Js.setup()*
+Js.toggle()	js.txt	/*Js.toggle()*
