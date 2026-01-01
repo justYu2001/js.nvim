@@ -13,6 +13,9 @@ if #vim.api.nvim_list_uis() == 0 then
     -- Add user's parser directory to runtimepath
     vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 
+    -- Install JavaScript parser for tests (blocking)
+    require("nvim-treesitter.install").install({ "javascript" }):wait(60000)
+
     -- Set up 'mini.test'
     require("mini.test").setup()
 
