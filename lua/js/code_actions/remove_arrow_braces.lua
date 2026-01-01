@@ -19,6 +19,9 @@ function M.get_source(null_ls)
                 return nil
             end
 
+            ---@cast arrow_node TSNode
+            ---@cast expr_node TSNode
+
             return {
                 {
                     title = "Remove braces around arrow function body",

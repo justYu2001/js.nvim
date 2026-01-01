@@ -1,5 +1,14 @@
 local M = {}
 
+---@class TSNode
+---@field range fun(): number, number, number, number
+---@field start fun(): number, number
+---@field type fun(): string
+---@field field fun(name: string): TSNode[]
+---@field parent fun(): TSNode|nil
+---@field named_child fun(index: number): TSNode|nil
+---@field named_child_count fun(): number
+
 ---@param bufnr number Buffer number
 ---@param row number 0-indexed row
 ---@param col number 0-indexed column

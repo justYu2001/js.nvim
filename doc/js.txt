@@ -59,6 +59,18 @@ Return ~
 
 ==============================================================================
 ------------------------------------------------------------------------------
+Class ~
+{TSNode}
+Fields ~
+{range} `(fun(): number,)` number, number, number
+{start} `(fun(): number,)` number
+{type} `(fun(): string)`
+{field} `(fun(name: string): TSNode[])`
+{parent} `(fun(): TSNode|nil)`
+{named_child} `(fun(index: number): TSNode|nil)`
+{named_child_count} `(fun(): number)`
+
+------------------------------------------------------------------------------
                                                     *find_arrow_function_node()*
                `find_arrow_function_node`({bufnr}, {row}, {col})
 Parameters ~
