@@ -41,4 +41,61 @@ Usage ~
 `require("js").setup()` (add `{}` with your |Js.options| table)
 
 
+==============================================================================
+------------------------------------------------------------------------------
+                                                                     *M.setup()*
+                              `M.setup`({null_ls})
+Parameters ~
+{null_ls} `(table)` The null-ls module
+
+------------------------------------------------------------------------------
+                                                               *M.get_sources()*
+                           `M.get_sources`({null_ls})
+Parameters ~
+{null_ls} `(table)` The null-ls module
+Return ~
+`(table[])` List of source definitions
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                    *find_arrow_function_node()*
+               `find_arrow_function_node`({bufnr}, {row}, {col})
+Parameters ~
+{bufnr} `(number)` Buffer number
+{row} `(number)` 0-indexed row
+{col} `(number)` 0-indexed column
+Return ~
+`(TSNode|nil)` The arrow_function node if found
+
+------------------------------------------------------------------------------
+                                                         *M.can_remove_braces()*
+                  `M.can_remove_braces`({bufnr}, {row}, {col})
+Parameters ~
+{bufnr} `(number)` Buffer number
+{row} `(number)` 0-indexed row
+{col} `(number)` 0-indexed column
+Return ~
+`(boolean)`, TSNode|nil, TSNode|nil Returns can_transform, expression node, arrow_function node
+
+------------------------------------------------------------------------------
+                                                               *get_node_text()*
+                        `get_node_text`({node}, {bufnr})
+Parameters ~
+{node} `(TSNode)`
+{bufnr} `(number)`
+Return ~
+`(string)`
+
+------------------------------------------------------------------------------
+                                                 *M.create_brace_removal_edit()*
+       `M.create_brace_removal_edit`({arrow_node}, {expr_node}, {bufnr})
+Parameters ~
+{arrow_node} `(TSNode)` The arrow_function node
+{expr_node} `(TSNode)` The expression node
+{bufnr} `(number)` Buffer number
+Return ~
+`(string|nil)` The new arrow function text
+
+
  vim:tw=78:ts=8:noet:ft=help:norl:

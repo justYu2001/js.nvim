@@ -1,4 +1,5 @@
 .SUFFIXES:
+.PHONY: all test deps lint
 
 all: documentation lint luals test
 
@@ -20,10 +21,11 @@ test-0.8.3:
 	bob use 0.8.3
 	make test
 
-# installs `mini.nvim`, used for both the tests and documentation.
+# installs deps for tests and documentation.
 deps:
 	@mkdir -p deps
-	git clone --depth 1 https://github.com/echasnovski/mini.nvim deps/mini.nvim
+	@test -d deps/mini.nvim || git clone --depth 1 https://github.com/echasnovski/mini.nvim deps/mini.nvim
+	@test -d deps/nvim-treesitter || git clone --depth 1 https://github.com/nvim-treesitter/nvim-treesitter deps/nvim-treesitter
 
 # installs deps before running tests, useful for the CI.
 test-ci: deps test
