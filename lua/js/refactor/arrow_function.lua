@@ -1,13 +1,13 @@
 local M = {}
 
 ---@class TSNode
----@field range fun(): number, number, number, number
----@field start fun(): number, number
----@field type fun(): string
----@field field fun(name: string): TSNode[]
----@field parent fun(): TSNode|nil
----@field named_child fun(index: number): TSNode|nil
----@field named_child_count fun(): number
+---@field range fun(self: TSNode): number, number, number, number
+---@field start fun(self: TSNode): number, number
+---@field type fun(self: TSNode): string
+---@field field fun(self: TSNode, name: string): TSNode[]
+---@field parent fun(self: TSNode): TSNode|nil
+---@field named_child fun(self: TSNode, index: number): TSNode|nil
+---@field named_child_count fun(self: TSNode): number
 
 ---@param bufnr number Buffer number
 ---@param row number 0-indexed row
@@ -62,6 +62,9 @@ function M.can_remove_braces(bufnr, row, col)
     end
 
     local stmt = body:named_child(0)
+    if not stmt then
+        return false, nil, nil
+    end
     local stmt_type = stmt:type()
 
     if stmt_type == "return_statement" then

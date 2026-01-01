@@ -62,13 +62,13 @@ Return ~
 Class ~
 {TSNode}
 Fields ~
-{range} `(fun(): number,)` number, number, number
-{start} `(fun(): number,)` number
-{type} `(fun(): string)`
-{field} `(fun(name: string): TSNode[])`
-{parent} `(fun(): TSNode|nil)`
-{named_child} `(fun(index: number): TSNode|nil)`
-{named_child_count} `(fun(): number)`
+{range} `(fun(self: TSNode): number,)` number, number, number
+{start} `(fun(self: TSNode): number,)` number
+{type} `(fun(self: TSNode): string)`
+{field} `(fun(self: TSNode, name: string): TSNode[])`
+{parent} `(fun(self: TSNode): TSNode|nil)`
+{named_child} `(fun(self: TSNode, index: number): TSNode|nil)`
+{named_child_count} `(fun(self: TSNode): number)`
 
 ------------------------------------------------------------------------------
                                                     *find_arrow_function_node()*
