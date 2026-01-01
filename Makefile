@@ -6,10 +6,15 @@ all: documentation lint luals test
 # runs all the test files.
 test:
 	make deps
+	make install-parsers
 	nvim --version | head -n 1 && echo ''
 	nvim --headless --noplugin -u ./scripts/minimal_init.lua \
 		-c "lua require('mini.test').setup()" \
 		-c "lua MiniTest.run({ execute = { reporter = MiniTest.gen_reporter.stdout({ group_depth = 2 }) } })"
+
+# installs treesitter parsers for tests
+install-parsers:
+	nvim --headless --noplugin -u ./scripts/minimal_init.lua -c "qa!"
 
 # runs all the test files on the nightly version, `bob` must be installed.
 test-nightly:
