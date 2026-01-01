@@ -16,6 +16,12 @@ if #vim.api.nvim_list_uis() == 0 then
     -- Install JavaScript parser for tests (blocking)
     require("nvim-treesitter.install").install({ "javascript" }):wait(60000)
 
+    -- Wait for parser to be ready
+    vim.wait(60000, function()
+        local ok = pcall(vim.treesitter.language.add, "javascript")
+        return ok
+    end, 100)
+
     -- Set up 'mini.test'
     require("mini.test").setup()
 
