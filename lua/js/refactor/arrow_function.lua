@@ -16,6 +16,7 @@ local M = {}
 local function find_arrow_function_node(bufnr, row, col)
     -- Ensure tree is parsed
     local parser_ok, parser = pcall(vim.treesitter.get_parser, bufnr)
+
     if parser_ok and parser then
         parser:parse()
     end
@@ -62,9 +63,11 @@ function M.can_remove_braces(bufnr, row, col)
     end
 
     local stmt = body:named_child(0)
+
     if not stmt then
         return false, nil, nil
     end
+
     local stmt_type = stmt:type()
 
     if stmt_type == "return_statement" then
