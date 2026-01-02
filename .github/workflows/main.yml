@@ -40,6 +40,9 @@ jobs:
           neovim: true
           version: v0.11.3
 
+      - name: setup tree-sitter-cli
+        run: npm install -g tree-sitter-cli
+
       - name: generate documentation
         run: make documentation-ci
 
@@ -54,7 +57,7 @@ jobs:
     timeout-minutes: 1
     strategy:
       matrix:
-        neovim_version: ['v0.9.5', 'v0.10.1', 'v0.11.3']
+        neovim_version: ['v0.11.5']
 
     steps:
       - uses: actions/checkout@v4
@@ -83,6 +86,9 @@ jobs:
           export PATH="${PWD}/.ci/lua-ls/bin:${PATH}"
           nvim --version
           make luals-ci
+
+      - name: setup tree-sitter-cli
+        run: npm install -g tree-sitter-cli
 
       - name: run tests
         run: make test-ci
@@ -128,6 +134,9 @@ jobs:
           export PATH="${PWD}/.ci/lua-ls/bin:${PATH}"
           nvim --version
           make luals-ci
+
+      - name: setup tree-sitter-cli
+        run: npm install -g tree-sitter-cli
 
       - name: run tests
         run: make test-ci
