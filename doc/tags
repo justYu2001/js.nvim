@@ -3,3 +3,7 @@ Js.enable()	js.txt	/*Js.enable()*
 Js.options	js.txt	/*Js.options*
 Js.setup()	js.txt	/*Js.setup()*
 Js.toggle()	js.txt	/*Js.toggle()*
+M.can_remove_braces()	js.txt	/*M.can_remove_braces()*
+M.create_brace_removal_edit()	js.txt	/*M.create_brace_removal_edit()*
+M.get_sources()	js.txt	/*M.get_sources()*
+M.setup()	js.txt	/*M.setup()*
