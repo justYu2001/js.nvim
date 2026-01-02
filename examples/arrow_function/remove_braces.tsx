@@ -48,3 +48,16 @@ const Tag = () => {
 };
 
 // Expected Result: <button onClick={() => console.log(1)}>
+
+// Expect won't show code actions for the following cases:
+
+const multiLineExpression = () => {
+  console.log(1);
+  console.log(2);
+};
+
+const expressionAndReturn = () => {
+  console.log(1);
+  return 1;
+};
+
