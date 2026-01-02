@@ -14,6 +14,8 @@ const returnTypeCase = (n: number): "a" | "b" => {
   return n % 2 ? "a" : "b";
 };
 
+// Expected Result: const returnTypeCase = (n: number): "a" | "b" => n % 2 ? "a" : "b";
+
 const returnObject = () => {
   return {
     name: "test",
