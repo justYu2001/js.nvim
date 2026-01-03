@@ -33,3 +33,28 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end)
     end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    once = true,
+    callback = function()
+        local ok = pcall(require, "luasnip")
+
+        if ok then
+            require("js.snippets").setup()
+        end
+    end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    once = true,
+    callback = function()
+        vim.schedule(function()
+            local ok = pcall(require, "luasnip")
+
+            if ok then
+                require("js.snippets").setup()
+            end
+        end)
+    end,
+})

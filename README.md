@@ -13,7 +13,11 @@
 
 ## ⚡️ Features
 
+**Code Actions:**
 - Remove braces around arrow function body
+
+**Snippets:**
+- `.const` postfix snippet - transforms expressions into const declarations
 
 **Supported filetypes:** JavaScript, TypeScript, JavaScriptReact, TypeScriptReact
 
@@ -21,6 +25,7 @@
 
 - Neovim >= v0.11
 - [none-ls](https://github.com/nvimtools/none-ls.nvim) (required for code actions)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) (optional, required for snippets)
 
 ## 📋 Installation
 
@@ -90,6 +95,8 @@ Plug "js.nvim"
 
 ## ☄ Getting started
 
+### Code Actions
+
 The plugin automatically integrates with none-ls. Code actions will appear when your cursor is on an arrow function that can be refactored.
 
 **Basic none-ls setup:**
@@ -108,6 +115,36 @@ null_ls.setup({
 1. Place cursor on arrow function
 2. Trigger code action (default: `<leader>ca` or via LSP menu)
 3. Select "Remove braces around arrow function body"
+
+### Snippets
+
+The plugin automatically integrates with LuaSnip. Postfix snippets are available when LuaSnip is installed.
+
+**`.const` postfix snippet:**
+
+Type `.const` after any expression to transform it into a const declaration.
+
+Examples:
+```javascript
+// Simple values
+123.const          → const | = 123
+"hello".const      → const | = "hello"
+
+// Expressions
+foo.bar().const    → const | = foo.bar()
+a + b.const        → const | = a + b
+
+// Multiline objects
+{
+  a: 1,
+  b: 2
+}.const            → const | = {
+                       a: 1,
+                       b: 2
+                     }
+```
+
+The cursor (`|`) is positioned at the variable name for immediate typing.
 
 ## ⌨ Contributing
 

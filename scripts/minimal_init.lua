@@ -10,6 +10,9 @@ if #vim.api.nvim_list_uis() == 0 then
     -- Add 'nvim-treesitter' for tree-sitter parsing in tests
     vim.cmd("set rtp+=deps/nvim-treesitter")
 
+    -- Add 'LuaSnip' for snippet tests
+    vim.cmd("set rtp+=deps/LuaSnip")
+
     -- Add user's parser directory to runtimepath
     vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 
