@@ -17,9 +17,7 @@ local T = MiniTest.new_set({
 T["setup()"] = MiniTest.new_set()
 
 T["setup()"]["loads without errors"] = function()
-    local result = child.lua_get(
-        "pcall(require, 'js.snippets.const_postfix')"
-    )
+    local result = child.lua_get("pcall(require, 'js.snippets.const_postfix')")
 
     MiniTest.expect.equality(result, true)
 end
