@@ -10,9 +10,11 @@ function M.setup(null_ls)
 
     registered = true
 
-    local source = require("js.code_actions.remove_arrow_braces").get_source(null_ls)
+    local sources = M.get_sources(null_ls)
 
-    null_ls.register(source)
+    for _, source in ipairs(sources) do
+        null_ls.register(source)
+    end
 end
 
 ---@param null_ls table The null-ls module
@@ -20,6 +22,7 @@ end
 function M.get_sources(null_ls)
     return {
         require("js.code_actions.remove_arrow_braces").get_source(null_ls),
+        require("js.code_actions.function_to_arrow").get_source(null_ls),
     }
 end
 

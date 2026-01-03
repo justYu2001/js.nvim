@@ -43,6 +43,21 @@ Usage ~
 
 ==============================================================================
 ------------------------------------------------------------------------------
+Class ~
+{TSNode}
+Fields ~
+{range} `(fun(self: TSNode): number,)` number, number, number
+{start} `(fun(self: TSNode): number,)` number
+{type} `(fun(self: TSNode): string)`
+{field} `(fun(self: TSNode, name: string): TSNode[])`
+{parent} `(fun(self: TSNode): TSNode|nil)`
+{named_child} `(fun(self: TSNode, index: number): TSNode|nil)`
+{named_child_count} `(fun(self: TSNode): number)`
+{iter_children} `(fun(self: TSNode): fun():)` TSNode, string
+
+
+==============================================================================
+------------------------------------------------------------------------------
                                                                      *M.setup()*
                               `M.setup`({null_ls})
 Parameters ~
@@ -59,18 +74,6 @@ Return ~
 
 ==============================================================================
 ------------------------------------------------------------------------------
-Class ~
-{TSNode}
-Fields ~
-{range} `(fun(self: TSNode): number,)` number, number, number
-{start} `(fun(self: TSNode): number,)` number
-{type} `(fun(self: TSNode): string)`
-{field} `(fun(self: TSNode, name: string): TSNode[])`
-{parent} `(fun(self: TSNode): TSNode|nil)`
-{named_child} `(fun(self: TSNode, index: number): TSNode|nil)`
-{named_child_count} `(fun(self: TSNode): number)`
-
-------------------------------------------------------------------------------
                                                          *M.can_remove_braces()*
                   `M.can_remove_braces`({bufnr}, {row}, {col})
 Parameters ~
@@ -86,6 +89,27 @@ Return ~
 Parameters ~
 {arrow_node} `(TSNode)` The arrow_function node
 {expr_node} `(TSNode)` The expression node
+{bufnr} `(number)` Buffer number
+Return ~
+`(string|nil)` The new arrow function text
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                      *M.can_convert_to_arrow()*
+                `M.can_convert_to_arrow`({bufnr}, {row}, {col})
+Parameters ~
+{bufnr} `(number)` Buffer number
+{row} `(number)` 0-indexed row
+{col} `(number)` 0-indexed column
+Return ~
+`(boolean)`, TSNode|nil Returns can_convert, function_node
+
+------------------------------------------------------------------------------
+                                              *M.create_arrow_conversion_edit()*
+           `M.create_arrow_conversion_edit`({function_node}, {bufnr})
+Parameters ~
+{function_node} `(TSNode)` The function node
 {bufnr} `(number)` Buffer number
 Return ~
 `(string|nil)` The new arrow function text
