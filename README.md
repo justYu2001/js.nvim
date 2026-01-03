@@ -3,28 +3,24 @@
 </p>
 
 <p align="center">
-    > A catch phrase that describes your plugin.
+    Refactoring features and snippets for JavaScript development. Inspired by WebStorm.
 </p>
 
 <div align="center">
-    > Drag your video (<10MB) here to host it for free on GitHub.
+    <img src="./demo.gif" alt="demo" />
 </div>
 
-<div align="center">
-
-> Videos don't work on GitHub mobile, so a GIF alternative can help users.
-
-_[GIF version of the showcase video for mobile users](SHOWCASE_GIF_LINK)_
-
-</div>
 
 ## ⚡️ Features
 
-> Write short sentences describing your plugin features
+- Remove braces around arrow function body
 
-- FEATURE 1
-- FEATURE ..
-- FEATURE N
+**Supported filetypes:** JavaScript, TypeScript, JavaScriptReact, TypeScriptReact
+
+## 📦 Requirements
+
+- Neovim >= v0.11
+- [none-ls](https://github.com/nvimtools/none-ls.nvim) (required for code actions)
 
 ## 📋 Installation
 
@@ -81,9 +77,9 @@ Plug "js.nvim"
 
 ```lua
 -- stable version
-require("lazy").setup({{"js.nvim", version = "*"}})
+{ "js.nvim", version = "*" }
 -- dev version
-require("lazy").setup({"js.nvim"})
+{ "js.nvim" }
 ```
 
 </td>
@@ -94,39 +90,26 @@ require("lazy").setup({"js.nvim"})
 
 ## ☄ Getting started
 
-> Describe how to use the plugin the simplest way
+The plugin automatically integrates with none-ls. Code actions will appear when your cursor is on an arrow function that can be refactored.
 
-## ⚙ Configuration
-
-> The configuration list sometimes become cumbersome, making it folded by default reduce the noise of the README file.
-
-<details>
-<summary>Click to unfold the full list of options with their default values</summary>
-
-> **Note**: The options are also available in Neovim by calling `:h js.options`
+**Basic none-ls setup:**
 
 ```lua
-require("js").setup({
-    -- you can copy the full list from lua/js/config.lua
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        -- js.nvim registers automatically
+    },
 })
 ```
 
-</details>
-
-## 🧰 Commands
-
-|   Command   |         Description        |
-|-------------|----------------------------|
-|  `:Toggle`  |     Enables the plugin.    |
+**Usage:**
+1. Place cursor on arrow function
+2. Trigger code action (default: `<leader>ca` or via LSP menu)
+3. Select "Remove braces around arrow function body"
 
 ## ⌨ Contributing
 
 PRs and issues are always welcome. Make sure to provide as much context as possible when opening one.
 
-## 🗞 Wiki
-
-You can find guides and showcase of the plugin on [the Wiki](https://github.com/yu/js.nvim/wiki)
-
-## 🎭 Motivations
-
-> If alternatives of your plugin exist, you can provide some pros/cons of using yours over the others.
