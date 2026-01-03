@@ -21,14 +21,10 @@ local defaults = vim.deepcopy(Js.options)
 ---
 ---@private
 function Js.defaults(options)
-    Js.options =
-        vim.deepcopy(vim.tbl_deep_extend("keep", options or {}, defaults or {}))
+    Js.options = vim.deepcopy(vim.tbl_deep_extend("keep", options or {}, defaults or {}))
 
     -- let your user know that they provided a wrong value, this is reported when your plugin is executed.
-    assert(
-        type(Js.options.debug) == "boolean",
-        "`debug` must be a boolean (`true` or `false`)."
-    )
+    assert(type(Js.options.debug) == "boolean", "`debug` must be a boolean (`true` or `false`).")
 
     return Js.options
 end

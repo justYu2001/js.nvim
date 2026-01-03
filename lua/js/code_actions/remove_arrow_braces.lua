@@ -13,7 +13,8 @@ function M.get_source(null_ls)
                 local row = params.row - 1
                 local col = params.col
 
-                local can_remove, expr_node, arrow_node = arrow_function.can_remove_braces(bufnr, row, col)
+                local can_remove, expr_node, arrow_node =
+                    arrow_function.can_remove_braces(bufnr, row, col)
 
                 if not can_remove then
                     return nil
@@ -26,7 +27,11 @@ function M.get_source(null_ls)
                     {
                         title = "Remove braces around arrow function body",
                         action = function()
-                            local edit = arrow_function.create_brace_removal_edit(arrow_node, expr_node, bufnr)
+                            local edit = arrow_function.create_brace_removal_edit(
+                                arrow_node,
+                                expr_node,
+                                bufnr
+                            )
 
                             if edit then
                                 local start_row, start_col, end_row, end_col = arrow_node:range()
