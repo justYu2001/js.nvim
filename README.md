@@ -14,6 +14,7 @@
 ## ⚡️ Features
 
 - Remove braces around arrow function body
+- Convert function to arrow function
 
 **Supported filetypes:** JavaScript, TypeScript, JavaScriptReact, TypeScriptReact
 
@@ -105,9 +106,11 @@ null_ls.setup({
 ```
 
 **Usage:**
-1. Place cursor on arrow function
+1. Place cursor on function
 2. Trigger code action (default: `<leader>ca` or via LSP menu)
-3. Select "Remove braces around arrow function body"
+3. Select desired action:
+   - "Remove braces around arrow function body" - simplifies arrow function
+   - "Convert to arrow function" - converts regular function to arrow function
 
 ## ⌨ Contributing
 
