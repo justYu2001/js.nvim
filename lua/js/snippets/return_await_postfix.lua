@@ -10,7 +10,7 @@ function M.get_snippets()
 
     return {
         ts_postfix({
-            trig = ".return",
+            trig = ".returnAwait",
             reparseBuffer = "live",
             matchTSNode = {
                 query = queries.postfix_expression,
@@ -26,7 +26,7 @@ function M.get_snippets()
                 end
 
                 return sn(nil, {
-                    t("return "),
+                    t("return await "),
                     t(matched),
                 })
             end, {}),
