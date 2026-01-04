@@ -1,6 +1,6 @@
 -- Known limitation: Does not work in concise arrow function bodies without braces
--- Works: () => { expr.await }
--- Broken: () => expr.await
+-- Works: () => { expr.log }
+-- Broken: () => expr.log
 -- This is a treesitter limitation - invalid syntax breaks parsing in expression bodies
 
 local M = {}
@@ -15,7 +15,7 @@ function M.get_snippets()
 
     return {
         ts_postfix({
-            trig = ".await",
+            trig = ".log",
             reparseBuffer = "live",
             matchTSNode = {
                 query = queries.postfix_expression,
@@ -30,9 +30,15 @@ function M.get_snippets()
                     matched = { "" }
                 end
 
+                -- Unwrap parenthesized expressions for multi-arg support
+                -- (a, b) -> a, b
+                local text = table.concat(matched, "\n")
+                local unwrapped = text:match("^%((.+)%)$") or text
+
                 return sn(nil, {
-                    t("await "),
-                    t(matched),
+                    t("console.log("),
+                    t(vim.split(unwrapped, "\n", { plain = true })),
+                    t(")"),
                 })
             end, {}),
         }),
