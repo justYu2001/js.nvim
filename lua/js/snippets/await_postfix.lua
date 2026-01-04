@@ -1,20 +1,15 @@
--- Known limitation: Does not work in concise arrow function bodies without braces
--- Works: () => { expr.await }
--- Broken: () => expr.await
--- This is a treesitter limitation - invalid syntax breaks parsing in expression bodies
-
 local M = {}
 
 function M.get_snippets()
     local ls = require("luasnip")
-    local ts_postfix = require("luasnip.extras.treesitter_postfix").treesitter_postfix
+    local hybrid_postfix = require("js.snippets.hybrid_postfix")
     local d = ls.dynamic_node
     local sn = ls.snippet_node
     local t = ls.text_node
     local queries = require("js.snippets.queries")
 
     return {
-        ts_postfix({
+        hybrid_postfix({
             trig = ".await",
             reparseBuffer = "live",
             matchTSNode = {

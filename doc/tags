@@ -6,4 +6,7 @@ Js.toggle()	js.txt	/*Js.toggle()*
 M.can_remove_braces()	js.txt	/*M.can_remove_braces()*
 M.create_brace_removal_edit()	js.txt	/*M.create_brace_removal_edit()*
 M.get_sources()	js.txt	/*M.get_sources()*
+M.hybrid_postfix()	js.txt	/*M.hybrid_postfix()*
 M.setup()	js.txt	/*M.setup()*
+extract_prefix()	js.txt	/*extract_prefix()*
+regex_resolver()	js.txt	/*regex_resolver()*

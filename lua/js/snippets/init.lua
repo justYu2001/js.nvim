@@ -21,7 +21,7 @@ function M.setup()
 
     -- Scan for *_postfix.lua files using vim.fs.dir
     for name, kind in vim.fs.dir(snippets_dir) do
-        if kind == "file" and name:match("_postfix%.lua$") then
+        if kind == "file" and name:match("_postfix%.lua$") and name ~= "hybrid_postfix.lua" then
             local module_name = name:gsub("%.lua$", "")
 
             local module_ok, module = pcall(require, "js.snippets." .. module_name)
@@ -38,11 +38,11 @@ function M.setup()
         end
     end
 
-    local filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" }
+    luasnip.add_snippets("javascript", all_snippets)
+    luasnip.add_snippets("typescript", all_snippets)
 
-    for _, ft in ipairs(filetypes) do
-        luasnip.add_snippets(ft, all_snippets)
-    end
+    luasnip.filetype_extend("javascriptreact", { "javascript" })
+    luasnip.filetype_extend("typescriptreact", { "typescript" })
 end
 
 return M

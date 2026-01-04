@@ -21,6 +21,9 @@
 
 **Supported filetypes:** JavaScript, TypeScript, JavaScriptReact, TypeScriptReact
 
+**Implementation Note:**
+Postfix snippets use tree-sitter for accurate AST-based matching with regex fallback for syntax errors. The hybrid approach works in most cases, but edge cases may still fail to match.
+
 ## 📦 Requirements
 
 - Neovim >= v0.11

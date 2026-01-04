@@ -11,9 +11,11 @@ num
 
 // Expected Result: console.log(num)
 
+num.toString()
 
-[1, 2, 3].map((n) => n)
+// Expected Result: console.log(num.toString())
 
+[1, 2, 3].map((n) => n);
 
 // Expected Result: [1, 2, 3].map((n) => console.log(n))
 
@@ -21,6 +23,9 @@ const items = [
   { id:1 }
 ];
 
+items.map((item) => item.id);
+
+// Expected Result: items.map((item) => console.log(item.id))
 
 (1, 2)
 
