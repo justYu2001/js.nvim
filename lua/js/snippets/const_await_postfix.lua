@@ -5,12 +5,13 @@ function M.get_snippets()
     local ts_postfix = require("luasnip.extras.treesitter_postfix").treesitter_postfix
     local d = ls.dynamic_node
     local sn = ls.snippet_node
+    local i = ls.insert_node
     local t = ls.text_node
     local queries = require("js.snippets.queries")
 
     return {
         ts_postfix({
-            trig = ".return",
+            trig = ".constAwait",
             reparseBuffer = "live",
             matchTSNode = {
                 query = queries.postfix_expression,
@@ -26,7 +27,9 @@ function M.get_snippets()
                 end
 
                 return sn(nil, {
-                    t("return "),
+                    t("const "),
+                    i(1),
+                    t(" = await "),
                     t(matched),
                 })
             end, {}),

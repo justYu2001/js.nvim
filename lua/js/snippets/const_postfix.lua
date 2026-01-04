@@ -7,35 +7,15 @@ function M.get_snippets()
     local sn = ls.snippet_node
     local i = ls.insert_node
     local t = ls.text_node
+    local queries = require("js.snippets.queries")
 
     return {
         ts_postfix({
             trig = ".const",
             reparseBuffer = "live",
             matchTSNode = {
-                query = [[
-                    [
-                        (number)
-                        (string)
-                        (template_string)
-                        (true)
-                        (false)
-                        (null)
-                        (undefined)
-                        (identifier)
-                        (call_expression)
-                        (member_expression)
-                        (subscript_expression)
-                        (object)
-                        (array)
-                        (arrow_function)
-                        (function_expression)
-                        (binary_expression)
-                        (ternary_expression)
-                        (parenthesized_expression)
-                    ] @prefix
-                ]],
-                query_lang = "javascript", -- Works for TS too
+                query = queries.postfix_expression,
+                query_lang = "javascript",
             },
             wordTrig = false,
         }, {
