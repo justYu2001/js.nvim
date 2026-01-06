@@ -56,3 +56,7 @@ const fn = (num: number) => {
 //   num % 6
 // )
 
+const temp = 1
+!temp
+
+// Expected Result: const  = ! temp
