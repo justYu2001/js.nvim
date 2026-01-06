@@ -91,4 +91,32 @@ Return ~
 `(string|nil)` The new arrow function text
 
 
+==============================================================================
+------------------------------------------------------------------------------
+                                                              *extract_prefix()*
+             `extract_prefix`({line_to_cursor}, {matched_trigger})
+@param line_to_cursor string The line content up to cursor position
+@param matched_trigger string The trigger that was matched (e.g., ".log")
+@return string The extracted expression, or "" if no match
+
+------------------------------------------------------------------------------
+                                                              *regex_resolver()*
+       `regex_resolver`({line_to_cursor}, {matched_trigger}, {captures})
+@param line_to_cursor string The line content up to cursor position
+@param matched_trigger string The trigger that was matched
+@param captures table Captures from snippet trigger
+@return table|nil Resolver result with trigger, captures, clear_region, env_override
+
+------------------------------------------------------------------------------
+                                                            *M.hybrid_postfix()*
+                 `M.hybrid_postfix`({context}, {nodes}, {opts})
+Wrapper around ts_postfix that adds regex fallback capability
+Creates a TS-based postfix snippet and wraps its resolver to fallback to regex
+when tree-sitter fails (e.g., due to syntax errors)
+@param context table Snippet context (trig, matchTSNode, reparseBuffer, etc.)
+@param nodes table Snippet nodes
+@param opts table|nil Optional snippet options
+@return table LuaSnip snippet with regex fallback
+
+
  vim:tw=78:ts=8:noet:ft=help:norl:

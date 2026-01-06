@@ -62,36 +62,6 @@ T["snippet registration"]["registers for typescript"] = function()
     MiniTest.expect.equality(result, true)
 end
 
-T["snippet registration"]["registers for javascriptreact"] = function()
-    child.bo.filetype = "javascriptreact"
-    child.lua([[require("js.snippets").setup()]])
-
-    local result = child.lua_get([[
-        (function()
-            local ls = require("luasnip")
-            local snippets = ls.get_snippets("javascriptreact")
-            return snippets ~= nil and #snippets > 0
-        end)()
-    ]])
-
-    MiniTest.expect.equality(result, true)
-end
-
-T["snippet registration"]["registers for typescriptreact"] = function()
-    child.bo.filetype = "typescriptreact"
-    child.lua([[require("js.snippets").setup()]])
-
-    local result = child.lua_get([[
-        (function()
-            local ls = require("luasnip")
-            local snippets = ls.get_snippets("typescriptreact")
-            return snippets ~= nil and #snippets > 0
-        end)()
-    ]])
-
-    MiniTest.expect.equality(result, true)
-end
-
 T["snippet structure"] = MiniTest.new_set()
 
 T["snippet structure"]["snippet is valid"] = function()

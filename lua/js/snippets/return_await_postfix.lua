@@ -2,14 +2,14 @@ local M = {}
 
 function M.get_snippets()
     local ls = require("luasnip")
-    local ts_postfix = require("luasnip.extras.treesitter_postfix").treesitter_postfix
+    local hybrid_postfix = require("js.snippets.hybrid_postfix")
     local d = ls.dynamic_node
     local sn = ls.snippet_node
     local t = ls.text_node
     local queries = require("js.snippets.queries")
 
     return {
-        ts_postfix({
+        hybrid_postfix({
             trig = ".returnAwait",
             reparseBuffer = "live",
             matchTSNode = {
