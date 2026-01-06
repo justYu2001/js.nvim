@@ -3,7 +3,9 @@ Js.enable()	js.txt	/*Js.enable()*
 Js.options	js.txt	/*Js.options*
 Js.setup()	js.txt	/*Js.setup()*
 Js.toggle()	js.txt	/*Js.toggle()*
+M.can_convert_to_arrow()	js.txt	/*M.can_convert_to_arrow()*
 M.can_remove_braces()	js.txt	/*M.can_remove_braces()*
+M.create_arrow_conversion_edit()	js.txt	/*M.create_arrow_conversion_edit()*
 M.create_brace_removal_edit()	js.txt	/*M.create_brace_removal_edit()*
 M.get_sources()	js.txt	/*M.get_sources()*
 M.hybrid_postfix()	js.txt	/*M.hybrid_postfix()*
