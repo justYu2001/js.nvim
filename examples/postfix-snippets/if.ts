@@ -24,3 +24,13 @@ reallyLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 // reallyLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongCondition) {
 //   
 // }
+
+const str = 'str'
+
+!str
+
+// Expected Result:
+// if (!str) {
+//
+// }
+
