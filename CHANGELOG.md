@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/justYu2001/js.nvim/compare/v0.2.0...v0.3.0) (2026-01-10)
+
+
+### Features
+
+* add JSX support to return postfix snippet ([#17](https://github.com/justYu2001/js.nvim/issues/17)) ([51aea66](https://github.com/justYu2001/js.nvim/commit/51aea66f52e28c46719ca417405995b9ba7903c2))
+
 ## [0.2.0](https://github.com/justYu2001/js.nvim/compare/v0.1.0...v0.2.0) (2026-01-06)
 
 
