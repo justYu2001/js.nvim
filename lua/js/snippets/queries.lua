@@ -20,6 +20,7 @@ M.postfix_expression = [[
         (binary_expression)
         (ternary_expression)
         (parenthesized_expression)
+        (jsx_element)
         (unary_expression)
     ] @prefix
 ]]

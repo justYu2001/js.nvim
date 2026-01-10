@@ -42,3 +42,17 @@ const returnMultiLineFunctionCall = () => {
 //  name: "test",
 //})
 
+const Tab = () => {
+  (
+    <div>
+      <p>test</p>
+    </div>
+  )
+};
+
+// Expected Result:
+// return (
+//   <div>
+//     <p>test</p>
+//   </div>
+// )
