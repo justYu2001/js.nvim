@@ -6,7 +6,11 @@
 
 // Expected Result: console.log("test")
 
-const num = 0;
+1 + 2
+
+// Expected Result: console.log(1 + 2)
+
+const num = 0
 num
 
 // Expected Result: console.log(num)
@@ -15,9 +19,13 @@ num.toString()
 
 // Expected Result: console.log(num.toString())
 
-[1, 2, 3].map((n) => n);
+[1, 2, 3].map((n) => n)
 
 // Expected Result: [1, 2, 3].map((n) => console.log(n))
+
+[1, 2, 3].map(() => 1)
+
+// Expected Result: [1, 2, 3].map(() => console.log(1))
 
 const items = [
   { id:1 }
