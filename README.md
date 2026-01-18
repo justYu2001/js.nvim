@@ -19,11 +19,10 @@
 
 **Snippets:**
 - `.const` postfix snippet - transforms expressions into const declarations
+- `.log` postfix snippet - wraps expressions in console.log
+- `.await` postfix snippet - adds await operator to expressions
 
 **Supported filetypes:** JavaScript, TypeScript, JavaScriptReact, TypeScriptReact
-
-**Implementation Note:**
-Postfix snippets use tree-sitter for accurate AST-based matching with regex fallback for syntax errors. The hybrid approach works in most cases, but edge cases may still fail to match.
 
 ## 📦 Requirements
 
@@ -151,6 +150,35 @@ a + b.const        → const | = a + b
 ```
 
 The cursor (`|`) is positioned at the variable name for immediate typing.
+
+**`.log` postfix snippet:**
+
+Type `.log` after any expression to wrap it in console.log.
+
+Examples:
+```javascript
+// Binary expressions
+1 + 2.log                    → console.log(1 + 2)
+
+// Method chains
+user.getName().log           → console.log(user.getName())
+
+// Arrow function bodies
+[1,2,3].map((n) => n.log)    → [1,2,3].map((n) => console.log(n))
+```
+
+**`.await` postfix snippet:**
+
+Type `.await` after any expression to add await operator.
+
+Examples:
+```javascript
+// Function calls
+fetchData().await            → await fetchData()
+
+// Binary expressions
+promise1 + promise2.await    → await (promise1 + promise2)
+```
 
 ## ⌨ Contributing
 
