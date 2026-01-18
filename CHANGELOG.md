@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/justYu2001/js.nvim/compare/v0.2.0...v0.3.0) (2026-01-18)
+
+
+### Features
+
+* add JSX support to return postfix snippet ([#17](https://github.com/justYu2001/js.nvim/issues/17)) ([51aea66](https://github.com/justYu2001/js.nvim/commit/51aea66f52e28c46719ca417405995b9ba7903c2))
+* pure tree-sitter implementation for postfix snippets ([#19](https://github.com/justYu2001/js.nvim/issues/19)) ([8f4cf27](https://github.com/justYu2001/js.nvim/commit/8f4cf271ec7fa26c09de717c706f817feb04fab8))
+
 ## [0.2.0](https://github.com/justYu2001/js.nvim/compare/v0.1.0...v0.2.0) (2026-01-06)
 
 
