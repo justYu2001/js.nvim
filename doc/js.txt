@@ -115,4 +115,104 @@ Return ~
 `(string|nil)` The new arrow function text
 
 
+==============================================================================
+------------------------------------------------------------------------------
+                                                     *M.show_replacement_menu()*
+           `M.show_replacement_menu`({occurrence_count}, {callback})
+Show replacement menu using vim.ui.select
+Parameters ~
+{occurrence_count} `(number)`
+{callback} `(function)`(choice: string|nil)
+
+------------------------------------------------------------------------------
+                                                      *M.prompt_variable_name()*
+          `M.prompt_variable_name`({scope_node}, {bufnr}, {callback})
+Prompt for variable name with validation loop
+Parameters ~
+{scope_node} `(TSNode)`
+{bufnr} `(number)`
+{callback} `(function)`(var_name: string|nil)
+
+------------------------------------------------------------------------------
+                                                   *M.apply_multi_replacement()*
+  `M.apply_multi_replacement`({occurrences}, {var_name}, {expr_text}, {bufnr})
+Apply multi-occurrence replacement
+Parameters ~
+{occurrences} `(table[])` Array of {node, row, col, end_row, end_col}
+{var_name} `(string)`
+{expr_text} `(string)` Original expression text
+{bufnr} `(number)`
+
+
+==============================================================================
+------------------------------------------------------------------------------
+                                                      *M.find_enclosing_scope()*
+                        `M.find_enclosing_scope`({node})
+Parameters ~
+{node} `(TSNode)`
+Return ~
+`(TSNode)`
+
+------------------------------------------------------------------------------
+                                                 *M.normalize_expression_text()*
+                 `M.normalize_expression_text`({node}, {bufnr})
+Normalize expression text (collapse whitespace)
+Parameters ~
+{node} `(TSNode)`
+{bufnr} `(number)`
+Return ~
+`(string)`
+
+------------------------------------------------------------------------------
+                                                         *M.expressions_equal()*
+                `M.expressions_equal`({node1}, {node2}, {bufnr})
+Compare two nodes for equality (type + normalized text recursively)
+Parameters ~
+{node1} `(TSNode)`
+{node2} `(TSNode)`
+{bufnr} `(number)`
+Return ~
+`(boolean)`
+
+------------------------------------------------------------------------------
+                                                *M.find_identical_expressions()*
+       `M.find_identical_expressions`({expr_node}, {scope_node}, {bufnr})
+Find all identical expressions in scope
+Parameters ~
+{expr_node} `(TSNode)` expression to match
+{scope_node} `(TSNode)` scope to search in
+{bufnr} `(number)`
+Return ~
+`(table[])` Array of {node, row, col, end_row, end_col}
+
+------------------------------------------------------------------------------
+                                                *M.find_const_insertion_point()*
+                  `M.find_const_insertion_point`({scope_node})
+Find where to insert const declaration
+Parameters ~
+{scope_node} `(TSNode)`
+Return ~
+`(number)` row, number col
+
+------------------------------------------------------------------------------
+                                                     *M.check_variable_exists()*
+          `M.check_variable_exists`({scope_node}, {var_name}, {bufnr})
+Check if variable exists in scope
+Parameters ~
+{scope_node} `(TSNode)`
+{var_name} `(string)`
+{bufnr} `(number)`
+Return ~
+`(boolean)`
+
+------------------------------------------------------------------------------
+                                                         *M.find_common_scope()*
+                         `M.find_common_scope`({nodes})
+Find common ancestor scope for multiple nodes
+Parameters ~
+{nodes} `(TSNode[])`
+Return ~
+`(TSNode)`
+
+
  vim:tw=78:ts=8:noet:ft=help:norl:
