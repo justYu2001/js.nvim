@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/justYu2001/js.nvim/compare/v0.3.0...v0.4.0) (2026-01-23)
+
+
+### Features
+
+* add scope-aware replace option for .const postfix snippet ([#20](https://github.com/justYu2001/js.nvim/issues/20)) ([c16a350](https://github.com/justYu2001/js.nvim/commit/c16a350c8f1b2dd4e2b3ff7fc33e8abf413352e4))
+
 ## [0.3.0](https://github.com/justYu2001/js.nvim/compare/v0.2.0...v0.3.0) (2026-01-18)
 
 
