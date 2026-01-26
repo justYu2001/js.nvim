@@ -23,7 +23,7 @@ num.toString()
 
 // Expected Result: [1, 2, 3].map((n) => console.log(n))
 
-[1, 2, 3].map(() => 1)
+[1, 2, 3].map(() => 1 + 2)
 
 // Expected Result: [1, 2, 3].map(() => console.log(1))
 
@@ -38,3 +38,7 @@ items.map((item) => item.id);
 (1, 2)
 
 // Expected Result: console.log(1, 2)
+
+const arrow = () => 1
+
+// Expected Result: const arrow = () => console.log(1)

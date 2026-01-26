@@ -13,7 +13,7 @@ function M.get_snippets()
             trig = ".log",
             dscr = "console.log(expr)",
             reparseBuffer = "live",
-            matchTSNode = postfix_utils.get_match_tsnode(),
+            matchTSNode = postfix_utils.get_match_tsnode_log(),
             wordTrig = false,
         }, {
             d(1, function(_, parent)
