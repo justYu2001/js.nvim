@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/justYu2001/js.nvim/compare/v0.4.0...v0.4.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* match arrow body for `.log` in braceless arrows ([#22](https://github.com/justYu2001/js.nvim/issues/22)) ([8120f82](https://github.com/justYu2001/js.nvim/commit/8120f826bb5a7f2f6ca352f81583cdcfecb754f9))
+
 ## [0.4.0](https://github.com/justYu2001/js.nvim/compare/v0.3.0...v0.4.0) (2026-01-23)
 
 
